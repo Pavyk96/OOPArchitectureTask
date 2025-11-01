@@ -42,7 +42,7 @@ public class TelegramBot extends TelegramLongPollingBot {
             Message updateMessage = update.getMessage();
             Long chatId = updateMessage.getChatId();
             String messageFromUser = updateMessage.getText();
-            String message = processor.processorMessage(messageFromUser);
+            String message = processor.processMessage(messageFromUser);
             sendMessage(String.valueOf(chatId), message);
         }
     }

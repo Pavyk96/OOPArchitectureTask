@@ -43,7 +43,7 @@ public class DiscordBot {
                     if (isUser) {
                         String chatId = eventMessage.getChannelId().asString();
                         String messageFromUser = eventMessage.getContent();
-                        String message = processor.processorMessage(messageFromUser);
+                        String message = processor.processMessage(messageFromUser);
                         sendMessage(chatId, message);
                     }
                 });

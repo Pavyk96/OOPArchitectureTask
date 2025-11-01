@@ -1,13 +1,17 @@
 package ru.urfu;
 
 /**
- * Обработчик сообщений для чатбота
+ * Обработчик сообщения
  *
  * @author Daniil Mezev
  */
-public interface MessageProcessor {
+public class MessageProcessor {
+
     /**
-     * Метод обработки сообщения пользователя
+     * Обработать сообщение
      */
-    String processorMessage(String messageFromUser);
+    public String processMessage(String messageFromUser) {
+        return "Ваше сообщение: " + "'" + messageFromUser + "'";
+    }
+
 }

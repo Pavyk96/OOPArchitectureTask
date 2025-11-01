@@ -7,15 +7,15 @@ public class Application {
 
     public static void main(String[] args) {
 
-        MessageProcessor processorMessageTg = new MessageProcessorImpl();
+        MessageProcessor processorMessage = new MessageProcessor();
+
         String telegramBotName = System.getenv("telegram_botName");
         String telegramToken = System.getenv("telegram_token");
-        new TelegramBot(telegramBotName, telegramToken, processorMessageTg)
+        new TelegramBot(telegramBotName, telegramToken, processorMessage)
                 .start();
 
-        MessageProcessor processorMessageDiscord = new MessageProcessorImpl();
         String discordToken = System.getenv("discord_token");
-        new DiscordBot(discordToken, processorMessageDiscord)
+        new DiscordBot(discordToken, processorMessage)
                 .start();
     }
 
