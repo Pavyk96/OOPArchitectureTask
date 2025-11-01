@@ -6,19 +6,17 @@ package ru.urfu;
 public class Application {
 
     public static void main(String[] args) {
+
+        MessageProcessor processorMessage = new MessageProcessor();
+
         String telegramBotName = System.getenv("telegram_botName");
         String telegramToken = System.getenv("telegram_token");
-        new TelegramBot(telegramBotName, telegramToken)
+        new TelegramBot(telegramBotName, telegramToken, processorMessage)
                 .start();
 
         String discordToken = System.getenv("discord_token");
-        new DiscordBot(discordToken)
+        new DiscordBot(discordToken, processorMessage)
                 .start();
-
-        /*
-         тут может быть сколько угодно чат платформ
-         и все должны работать одинаково
-        */
     }
 
 }
